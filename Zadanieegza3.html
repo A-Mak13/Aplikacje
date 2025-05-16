@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="title">
+        <br>
+        <input type="text" id="genre">
+        <br>
+        <input type="number" id="dateofproduction">
+        <br>
+        <input type="number" id="review">
+        <br>
+        <input type="button" value="Czyść" onclick="czysc()">
+        <input type="button" value="Dodaj" onclick="dodaj()">
+    </form>
+    <table id="tabela">
+        <tr>
+            <td>tytuł</td>
+            <td>gatunek</td>
+            <td>Rok produkcji</td>
+            <td>Ocena</td>
+        </tr>
+    </table>
+    <script>
+        function czysc(){
+            document.querySelector("#title").value = null;
+            document.querySelector("#genre").value = null;
+            document.querySelector("#dateofproduction").value = null;
+            document.querySelector("#review").value = null;
+        }
+        function dodaj(){
+            let Datatitle = document.querySelector("#title").value;
+            let Datagenre = document.querySelector("#genre").value;
+            let Datadop= document.querySelector("#dateofproduction").value;
+            let Datareview= document.querySelector("#review").value;
+            
+            let tabla = document.querySelector("#tabela");
+            var row = tabla.insertRow(1);
+            var cellDatatitle = row.insertCell(0);
+            var cellDatagenre = row.insertCell(1);
+            var cellDatadop = row.insertCell(2);
+            var cellDatareview = row.insertCell(3);
+
+            cellDatatitle.innerHTML = Datatitle;
+            cellDatagenre.innerHTML = Datagenre;
+            cellDatadop.innerHTML = Datadop;
+            cellDatareview.innerHTML = Datareview;
+        }
+    </script>
+</body>
+</html>
